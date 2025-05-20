@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prettiest Girl Gallery (Real)</title>
+    <style>
+        /* Reset & base styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+                Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #444;
+        }
+
+        main {
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* MOBILE-FIRST: single-column (full-width) */
+        .gallery {
+            /* remove display: grid; … */
+            column-count: 1;
+            column-gap: 1rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 1rem;
+            /* gutter between items vertically */
+            break-inside: avoid;
+            /* prevent images from splitting */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* DESKTOP: switch to multitple columns */
+        @media screen and (min-width: 600px) {
+            .gallery {
+                column-count: 3;
+                /* try 2, 3 or 4 columns */
+                column-gap: 1rem;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Prettiest Girl in the World Content (real)</h1>
+        <p>(happy birthday, my love!)</p>
+    </header>
+    <main>
+        <div class="gallery" id="gallery">
+            <!-- Images will be injected here -->
+        </div>
+    </main>
+    <footer>
+        <p>
+            <3
+        </p>
+    </footer>
+
+    <script>
+        const imageNames = [
+            '20250309_221517000_iOSFilm.jpg',
+            'IMG_8398.JPG',
+            'A0A1396-R1-02-35.JPEG',
+            'IMG_8313Film.jpg',
+            'IMG_8400.JPG',
+            'A0A1396-R1-24-13.JPEG',
+            'IMG_8410.JPG',
+            'IMG_3469.JPG',
+            'IMG_8324Film.jpg',
+            'IMG_8428.JPG',
+            'IMG_3471.JPG',
+            'IMG_8432.JPG',
+            'IMG_3481.JPG',
+            'IMG_8358Film.jpg',
+            'bleh.JPEG'
+        ];
+
+        const galleryEl = document.getElementById('gallery');
+        imageNames.forEach(name => {
+            const img = document.createElement('img');
+            img.src = `images/${name}`;
+            img.alt = 'Birthday photo';
+            galleryEl.appendChild(img);
+        });
+    </script>
+</body>
+
+</html>
